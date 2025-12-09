@@ -71,6 +71,32 @@ Run `spark_declaritive_pipeline_examples/explorations/03_weather_ingest.py` to l
 ### Silver Layer
 - **forecasts_expanded**: Transformed forecast data with flattened structures and additional computed fields (timezone offsets, UTC timestamps, etc.)
 
+## Building an SDP Pipeline from the UI
+
+To create a Spark Declarative Pipeline (SDP) using the transformation patterns in this repository, follow these steps:
+
+1. **Navigate to Pipelines**: In your Databricks workspace, select **Jobs & Pipelines**
+
+2. **Create New ETL Pipeline**: Click **Create new ETL pipeline**
+
+3. **Add Existing Assets**: Select **Add existing assets**
+
+4. **Configure Root Path**: Set the root path to:
+   ```
+   /Workspace/Users/YOUR_USER_NAME/databricks_examples/spark_declaritive_pipeline_examples
+   ```
+   Your user name should populate after cloning the repo into databricks
+
+5. **Configure Source Code Path**: Set the source code path to:
+   ```
+   /Workspace/Users/YOUR_USERNAME/databricks_examples/spark_declaritive_pipeline_examples/spark_declaritive_pipeline_examples/transformations/
+   ```
+   Your user name should populate after cloning the repo into databricks
+
+6. **Create Pipeline**: Click **Create pipeline** to finalize the setup
+
+Once created, your SDP pipeline will automatically discover and execute the transformation patterns defined in the `transformations/` directory. You can then schedule the pipeline to run on a regular basis or trigger it manually.
+
 ## Transformation Patterns
 
 This repository demonstrates several common data transformation and loading patterns using Databricks Delta Live Tables (DLT) and streaming tables. These patterns are the core value of this repository and show how to handle different data loading scenarios.
@@ -137,31 +163,6 @@ Shows how to handle upserts at the source and correctly process them using SCD T
 - Transforms nested structures and adds audit columns
 - Sequences changes by timestamp to handle out-of-order updates
 
-## Building an SDP Pipeline from the UI
-
-To create a Spark Declarative Pipeline (SDP) using the transformation patterns in this repository, follow these steps:
-
-1. **Navigate to Pipelines**: In your Databricks workspace, select **Jobs** → **Pipelines**
-
-2. **Create New ETL Pipeline**: Click **Create new ETL pipeline**
-
-3. **Add Existing Assets**: Select **Add existing assets**
-
-4. **Configure Root Path**: Set the root path to:
-   ```
-   /Workspace/Users/YOUR_USER_NAME/databricks_examples/spark_declaritive_pipeline_examples
-   ```
-   Replace `YOUR_USER_NAME` with your actual Databricks username.
-
-5. **Configure Source Code Path**: Set the source code path to:
-   ```
-   /Workspace/Users/YOUR_USERNAME/databricks_examples/spark_declaritive_pipeline_examples/spark_declaritive_pipeline_examples/transformations/
-   ```
-   Replace `YOUR_USERNAME` with your actual Databricks username.
-
-6. **Create Pipeline**: Click **Create pipeline** to finalize the setup
-
-Once created, your SDP pipeline will automatically discover and execute the transformation patterns defined in the `transformations/` directory. You can then schedule the pipeline to run on a regular basis or trigger it manually.
 
 ## Utility Functions
 
