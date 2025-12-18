@@ -1,4 +1,8 @@
 # Databricks notebook source
+#Historical weather data: https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/by_year/
+
+# COMMAND ----------
+
 # MAGIC %pip install noaa_sdk
 
 # COMMAND ----------
