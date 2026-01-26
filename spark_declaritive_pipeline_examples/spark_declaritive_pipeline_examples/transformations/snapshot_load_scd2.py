@@ -9,14 +9,14 @@ source_table_name = "leigh_robertson_demo.silver_noaa.local_snapshot"
 
 # Create the target streaming table
 dp.create_streaming_table(
-    name="local_snapshot_scd2",
+    name="local_snapshot_scd2_databricks_example",
     comment="SCD Type 2 table from local snapshot",
     table_properties={"quality": "gold"}
 )
 
 # Apply the CDC flow
 dp.create_auto_cdc_from_snapshot_flow(
-    target="local_snapshot_scd2",
+    target="local_snapshot_scd2_databricks_example",
     source=source_table_name,
     keys=["post_code", "startTime"],  # Assumed keys based on other NOAA tables; update if different
     stored_as_scd_type=2

@@ -37,7 +37,7 @@ def bronze_forecasts_preprocessed():
     #return df
 
 dp.create_streaming_table(
-    name="forecasts_expanded_ldp",
+    name="forecasts_expanded_ldp_databricks_example",
     comment="SCD Type 1 managed silver forecasts",
     table_properties={"quality": "silver"},
     # constraints={
@@ -47,7 +47,7 @@ dp.create_streaming_table(
 )
 
 dp.create_auto_cdc_flow(
-    target = "forecasts_expanded_ldp",
+    target = "forecasts_expanded_ldp_databricks_example",
     source = "bronze_forecasts_preprocessed",
     keys = ["post_code", "startTime"],  # Replace with your actual key
     sequence_by = col("audit_update_ts"),

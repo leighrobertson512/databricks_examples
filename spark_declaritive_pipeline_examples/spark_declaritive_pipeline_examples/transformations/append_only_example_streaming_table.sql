@@ -1,6 +1,6 @@
 -- Please edit the sample below
 
-CREATE OR REFRESH STREAMING TABLE leigh_robertson_demo.silver_noaa.forecasts_expanded_append
+CREATE OR REFRESH STREAMING TABLE leigh_robertson_demo.silver_noaa.forecasts_expanded_append_databricks_example
 (
   CONSTRAINT non_null_time EXPECT (startTime IS NOT NULL AND endTime IS NOT NULL) ON VIOLATION DROP ROW,
   CONSTRAINT valid_temperature EXPECT (temperature > -100 AND temperature < 130) ON VIOLATION DROP ROW,
