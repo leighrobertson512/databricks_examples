@@ -208,3 +208,6 @@ __marimo__/
 
 # macOS
 .DS_Store
+
+# Project-specific files not to commit
+spark_declaritive_pipeline_examples/spark_declaritive_pipeline_examples/transformations/sample_not_to_commit_to_git.sql
