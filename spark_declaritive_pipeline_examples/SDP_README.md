@@ -185,3 +185,21 @@ The pipeline relies on utility functions from `utilities/utils_file.py`:
 - The pipeline uses MERGE operations to handle both inserts and updates idempotently
 - Foreign key constraints ensure referential integrity between zip codes and forecasts
 
+## AUTO CDC SCD Type 1 with Change Data Feed Example
+
+**Note:** This example is separate from the weather data examples above.
+
+This example demonstrates how to leverage **Databricks Change Data Feed (CDF)** and **SDP AUTO CDC SCD Type 1** to efficiently process updates and deletes in your data pipelines.
+
+**Files:**
+- **Data Generation:** `explorations/autocdc_data_generation.ipynb`
+  - Notebook for creating mock data with insert, update, and delete operations
+  - Generates sample data used by the AUTO CDC pipeline example
+
+- **AUTO CDC Pipeline:** `transformations/autocdc_scd1_cdf_example.sql`
+  - SQL pipeline that processes changes using SDP's AUTO CDC functionality
+  - Demonstrates SCD Type 1 pattern with Change Data Feed
+  - Shows how to automatically handle updates and deletes from source data
+
+**Purpose:** This example shows how to use Databricks' Change Data Feed feature in combination with SDP's AUTO CDC capability to maintain Type 1 slowly changing dimensions, automatically propagating updates and deletes from source systems to target tables.
+
